@@ -16,6 +16,11 @@ server.use(helmet());
 const { authenticate, generateToken } = require("../config/middleware");
 
 //----------------GET Countries------------------------DONE
+
+server.get("/", (req, res) => {
+  res.send("server is working again");
+});
+
 server.get("/countries", (req, res) => {
   db("country")
     .then(projects => {
