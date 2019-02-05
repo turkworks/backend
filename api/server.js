@@ -43,7 +43,7 @@ server.post("/register", (req, res) => {
     .catch(err => res.status(500).json({ message: "registry failed" }));
 });
 
-//----------------POST-Login Cooordinator----------------In Progress
+//----------------POST-Login Cooordinator----------------Done
 
 server.post("/login", (req, res) => {
   const cred = req.body;
@@ -67,6 +67,17 @@ server.post("/login", (req, res) => {
     })
 
     .catch(err => res.status(500).json({ message: "login failed" }));
+});
+
+//----------------POST-coordinator_stories----------------Done
+
+server.post("/save", (req, res) => {
+  savedStory = db("coordinator_stories")
+    .insert(savedStory)
+    .then(story => {
+      res.status(201).json(story);
+    })
+    .catch(err => res.status(500).json({ message: "save failed" }));
 });
 
 //-----------------STORIES ENDPOINTS-----------------------------------
