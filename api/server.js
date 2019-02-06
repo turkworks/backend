@@ -76,7 +76,7 @@ server.post("/login", (req, res) => {
 
 server.post("/save", (req, res) => {
   savedStory = db("coordinator_stories")
-    .insert(savedStory)
+    .insert(req.body)
     .then(story => {
       res.status(201).json(story);
     })
