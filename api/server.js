@@ -16,7 +16,10 @@ server.use(helmet());
 const { authenticate, generateToken } = require("../config/middleware");
 
 //----------------GET Countries------------------------DONE
-
+/**
+ * @api {get} /countries Request country name
+ *
+ */
 server.get("/", (req, res) => {
   res.send("server is working again");
 });
