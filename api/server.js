@@ -5,7 +5,7 @@ const bcrypt = require("bcryptjs");
 const cors = require("cors");
 
 const knexConfig = require("../knexfile.js");
-const db = knex(knexConfig.development);
+const db = knex(knexConfig[process.env.ENV] || knexConfig.development);
 
 const server = express();
 
